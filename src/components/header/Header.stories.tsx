@@ -13,3 +13,5 @@ export const Default = Template.bind({});
 Default.args = {
   name: "Jane Doe",
 };
+
+export const Secondary = () => <Header name="Ola nordmann" />;
