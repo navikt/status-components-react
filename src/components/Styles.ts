@@ -1,12 +1,94 @@
 import styled from "styled-components";
+import { Heading } from "@navikt/ds-react";
+/*
+---- FOOTER ----
+*/
 
-const CustomHeader = styled.header`
+export const FooterContainer = styled.footer`
+  width: 100%;
+  margin-top: auto; /*Footer always at bottom (if min.height of container is 100vh)*/
+  padding: 0 1.5rem;
+  font-family: "Source Sans Pro", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
+  background-color: white;
+  border-top: 1px solid #eaeaea;
+
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 63px;
+    margin-right: 1.2rem;
+
+    :hover {
+      transform: scale(1.05);
+    }
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    min-height: 80px;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    li {
+      padding: 0.625rem 0;
+    }
+  }
+
+  a {
+    color: black;
+    :hover {
+      text-decoration: none;
+    }
+  }
+
+  @media (min-width: 600px) {
+    padding: 0 50px;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    ul {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
+  }
+`;
+
+export const Separator = styled.span`
+  display: none;
+  @media (min-width: 700px) {
+    display: block;
+    border-left: 1px solid var(--navds-global-color-blue-100);
+    height: 100%;
+    width: 1px;
+    padding: 0 5ch;
+  }
+`;
+
+/*
+---- HEADER ----
+*/
+
+export const CustomHeader = styled.header`
   min-height: 106px;
   height: 100%;
   padding-bottom: 0.5rem;
   background-color: white;
   border-bottom: 1px solid #c6c2bf;
-
+  font-family: "Source Sans Pro", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
   position: relative;
   display: flex;
   flex-flow: row wrap;
@@ -74,7 +156,7 @@ const CustomHeader = styled.header`
   }
 `;
 
-const HeaderContent = styled.span`
+export const HeaderContent = styled.span`
   width: 100%;
 
   display: flex;
@@ -87,7 +169,12 @@ const HeaderContent = styled.span`
   }
 `;
 
-const HeadingCustomized = styled(Heading)`
+export const DetailText = styled(Heading)`
+  font-size: 14px;
+  font-weight: 100;
+`;
+
+export const HeadingCustomized = styled(Heading)`
   display: none;
 
   text-align: center;
@@ -102,50 +189,5 @@ const HeadingCustomized = styled(Heading)`
   }
   @media (min-width: 650px) {
     white-space: normal;
-  }
-`;
-
-const HeaderOptions = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  flex-wrap: wrap;
-
-  @media (min-width: 250px) {
-    justify-content: flex-end;
-  }
-
-  @media (min-width: 768px) {
-    flex-wrap: none;
-  }
-`;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-`;
-
-const SubscribeModalWrapper = styled.div`
-  position: absolute;
-  z-index: 100;
-  @media (min-width: 930px) {
-    right: auto;
-  }
-`;
-
-const SubscribeButtonWrapper = styled.div`
-  position: relative;
-  display: none;
-
-  @media (min-width: 450px) {
-    display: block;
-  }
-`;
-const FilterButtonWrapper = styled.div`
-  display: none;
-
-  @media (min-width: 450px) {
-    display: block;
   }
 `;
