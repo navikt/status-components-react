@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Heading } from "@navikt/ds-react";
+import { RouterHomePage } from "../../types/routes";
 
 import {
   CustomHeader,
@@ -12,7 +13,7 @@ function Header() {
   return (
     <CustomHeader>
       <div className="header-menues">
-        <a href={"https://status.nav.no/sp"} aria-label="Lenke til forside">
+        <a href={RouterHomePage.PATH} aria-label="Lenke til forside">
           <img
             src="src/assets/navblack.png"
             alt="Til forsiden"

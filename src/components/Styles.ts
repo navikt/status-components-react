@@ -191,3 +191,74 @@ export const HeadingCustomized = styled(Heading)`
     white-space: normal;
   }
 `;
+
+/*
+---- NAVIGATION ----
+ */
+
+export const NavigationContainer = styled.nav`
+  height: 2.75rem;
+  border-bottom: #c6c2bf 1px solid;
+
+  display: none;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    li {
+      :hover {
+        cursor: pointer;
+      }
+
+      .inactive {
+        border-bottom: transparent 3px solid;
+
+        :hover {
+          border-bottom: var(--navds-global-color-blue-500) 3px solid;
+        }
+      }
+
+      :focus,
+      :active {
+        color: black;
+        background-color: transparent;
+        outline: var(--navds-semantic-color-focus) 3px solid;
+        box-shadow: 0 0 0 0;
+        outline-offset: -3px;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
+export const LinkSpacer = styled.div`
+  margin: 0 1rem;
+  height: 100%;
+
+  border-bottom: 3px transparent;
+  display: flex;
+  align-items: center;
+
+  &.active {
+    border-bottom: var(--navds-global-color-blue-500) 3px solid;
+
+    p {
+      font-weight: bold !important;
+    }
+  }
+`;
