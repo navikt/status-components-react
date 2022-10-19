@@ -14,7 +14,7 @@ import {
   RouterVaktor,
 } from "../../types/routes";
 
-function Navigation() {
+export const Navigation = () => {
   const router = useRouter();
 
   //const user = useContext<UserData>(UserStateContext)
@@ -126,6 +126,4 @@ function Navigation() {
       </ul>
     </NavigationContainer>
   );
-}
-
-export default Navigation;
+};

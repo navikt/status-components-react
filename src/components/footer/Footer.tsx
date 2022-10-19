@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BodyShort } from "@navikt/ds-react";
 import { FooterContainer } from "../Styles";
 
-function Footer() {
+export const Footer = () => {
   return (
     <FooterContainer>
       <span>
@@ -31,6 +31,6 @@ function Footer() {
       </ul>
     </FooterContainer>
   );
-}
+};
 
 export default Footer;

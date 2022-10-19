@@ -9,7 +9,7 @@ import {
   DetailText,
 } from "../Styles";
 
-function Header() {
+export const Header = () => {
   return (
     <CustomHeader>
       <div className="header-menues">
@@ -30,6 +30,4 @@ function Header() {
       </HeaderContent>
     </CustomHeader>
   );
-}
-
-export default Header;
+};
