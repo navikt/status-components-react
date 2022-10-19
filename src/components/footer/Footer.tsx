@@ -32,5 +32,3 @@ export const Footer = () => {
     </FooterContainer>
   );
 };
-
-export default Footer;
