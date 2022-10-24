@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Heading } from "@navikt/ds-react";
 import { RouterHomePage } from "../../types/routes";
+import { SERVER_PROPS_ID } from "next/dist/shared/lib/constants";
 
-export const CustomHeader = styled.header`
+export const CustomHeader = styled.div`
   min-height: 106px;
   height: 100%;
   padding-bottom: 0.5rem;
@@ -77,7 +78,7 @@ export const CustomHeader = styled.header`
   }
 `;
 
-export const HeaderContent = styled.span`
+export const HeaderContent = styled.div`
   width: 100%;
 
   display: flex;
@@ -90,7 +91,7 @@ export const HeaderContent = styled.span`
   }
 `;
 
-export const DetailText = styled(Heading)`
+export const DetailText = styled.div`
   font-size: 14px;
   font-weight: 100;
 `;
@@ -113,16 +114,12 @@ export const HeadingCustomized = styled(Heading)`
   }
 `;
 
-export const Header = () => {
+export const Header = (imageURL: string) => {
   return (
     <CustomHeader>
       <div className="header-menues">
         <a href={RouterHomePage.PATH} aria-label="Lenke til forside">
-          <img
-            src="src/assets/navblack.png"
-            alt="Til forsiden"
-            aria-hidden="true"
-          />
+          <img src={imageURL} alt="Til forsiden" aria-hidden="true" />
         </a>
       </div>
 

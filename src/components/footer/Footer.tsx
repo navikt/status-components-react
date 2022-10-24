@@ -75,16 +75,12 @@ export const Separator = styled.span`
   }
 `;
 
-export const Footer = () => {
+export const Footer = (imageURL: string) => {
   return (
     <FooterContainer>
       <span>
         <a href="https://www.nav.no/no/person#" aria-label="Lenke til nav.no">
-          <img
-            src="src/assets/navblack.png"
-            alt="Til forsiden"
-            aria-hidden="true"
-          />
+          <img src={imageURL} alt="Til forsiden" aria-hidden="true" />
         </a>
         <BodyShort>Arbeids- og velferdsetaten</BodyShort>
       </span>
