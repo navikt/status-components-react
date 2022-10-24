@@ -9,4 +9,11 @@ export default {
   component: Header,
 } as ComponentMeta<typeof Header>;
 
-export const Primary: ComponentStory<typeof Header> = () => <Header />;
+//👇 We create a “template” of how args map to rendering
+const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+  imageURL: "src/assets/navblack.png",
+};
