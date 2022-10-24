@@ -114,12 +114,12 @@ export const HeadingCustomized = styled(Heading)`
   }
 `;
 
-export const Header = (imageURL: string) => {
+export const Header = (props: { imageURL: string }) => {
   return (
     <CustomHeader>
       <div className="header-menues">
         <a href={RouterHomePage.PATH} aria-label="Lenke til forside">
-          <img src={imageURL} alt="Til forsiden" aria-hidden="true" />
+          <img src={props.imageURL} alt="Til forsiden" aria-hidden="true" />
         </a>
       </div>
 
