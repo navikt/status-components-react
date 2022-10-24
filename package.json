@@ -6,15 +6,14 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index-main.umd.cjs",
+  "module": "./dist/index-main.js",
+  "types": "./dist/index-main.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
-    },
-    "./style.css": "./dist/style.css"
+      "import": "./dist/index-main.js",
+      "require": "./dist/index-main.umd.cjs"
+    }
   },
   "publishConfig": {
     "access": "public"

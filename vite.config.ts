@@ -17,7 +17,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"),
       name: "@navikt/status-components-react",
       // the proper extensions will be added
-      fileName: "index",
+      fileName: "index-main",
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
