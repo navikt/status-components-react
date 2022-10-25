@@ -114,7 +114,7 @@ export const HeadingCustomized = styled(Heading)`
   }
 `;
 
-export const Header = (props: { imageURL: string }) => {
+export const Header = (props: { imageURL: any }) => {
   return (
     <CustomHeader>
       <div className="header-menues">
