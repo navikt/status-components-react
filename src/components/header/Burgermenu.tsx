@@ -28,6 +28,7 @@ const BurgerMenuContainer = styled.div`
 
   .menu-text {
     font-weight: bold;
+    display: inline;
   }
 
   .hamburger-ikon,
@@ -36,7 +37,7 @@ const BurgerMenuContainer = styled.div`
     height: 24px;
 
     position: relative;
-    display: block;
+    display: inline;
   }
 
   .closed-burger {
@@ -136,6 +137,7 @@ const PopoverContent = () => {
             </li>
           </>
         )}
+
         <li>
           <Link href={RouterPrivatperson.PATH}>{RouterPrivatperson.NAME}</Link>
         </li>
