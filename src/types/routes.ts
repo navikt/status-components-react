@@ -1,43 +1,43 @@
 // Landing page
 export enum RouterHomePage {
   NAME = "Home",
-  PATH = "/sp",
+  PATH = "https://status.nav.no/sp",
 }
 // ---
 
 // Landing page
 export enum RouterVaktor {
   NAME = "Vaktor",
-  PATH = "/vaktor",
+  PATH = "https://status.nav.no/vaktor",
 }
 //---
 
 // Default dashboards
 export enum RouterPrivatperson {
   NAME = "Privatperson",
-  PATH = "/Dashboard/Privatperson",
+  PATH = "https://status.nav.no/sp/Dashboard/Privatperson",
 }
 
 export enum RouterArbeidsgiver {
   NAME = "Arbeidsgiver",
-  PATH = "/Dashboard/Arbeidsgiver",
+  PATH = "https://status.nav.no/sp/Dashboard/Arbeidsgiver",
 }
 
 export enum RouterSamarbeidspartner {
   NAME = "Samarbeidspartner",
-  PATH = "/Dashboard/Samarbeidspartner",
+  PATH = "https://status.nav.no/sp/Dashboard/Samarbeidspartner",
 }
 
 export enum RouterInternt {
   NAME = "Internt",
-  PATH = "/Dashboard/Internt",
+  PATH = "https://status.nav.no/sp/Dashboard/Internt",
 }
 // ---
 
 // Admin
 export enum RouterAdmin {
   NAME = "Admin",
-  PATH = "/Admin?tab=Tjenester",
+  PATH = "https://status.nav.no/sp/Admin?tab=Tjenester",
 }
 
 export enum RouterAdminDashboards {
@@ -98,7 +98,7 @@ export enum RouterAvvikshistorikk {
 // OPSMeldinger
 export enum RouterOpsMeldinger {
   NAME = "Avviksmeldinger",
-  PATH = "/Avviksmeldinger",
+  PATH = "https://status.nav.no/sp/Avviksmeldinger",
 }
 
 export enum RouterOpprettOpsMelding {
