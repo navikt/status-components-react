@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Heading } from "@navikt/ds-react";
 import { RouterHomePage } from "../../types/routes";
 import { SERVER_PROPS_ID } from "next/dist/shared/lib/constants";
+import BurgerMenu from "./Burgermenu";
 
 export const CustomHeader = styled.div`
   min-height: 106px;
@@ -129,6 +130,10 @@ export const Header = (props: { imageURL: any }) => {
           <DetailText>Under oppbygging</DetailText>
         </HeadingCustomized>
       </HeaderContent>
+      <div className="header-menues last">
+        <BurgerMenu />
+        {/**  <ProfileOrLogin name={name} navIdent={navIdent} />*/}
+      </div>
     </CustomHeader>
   );
 };
