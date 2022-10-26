@@ -28,6 +28,7 @@ const BurgerMenuContainer = styled.div`
 
   .menu-text {
     font-weight: bold;
+    float: left;
     display: inline;
   }
 
@@ -35,7 +36,7 @@ const BurgerMenuContainer = styled.div`
   .close-ikon {
     width: 28px;
     height: 24px;
-
+    float: left;
     position: relative;
     display: inline;
   }
