@@ -17,6 +17,11 @@ import {
   RouterSamarbeidspartner,
 } from "../../types/routes";
 
+const TextContainer = styled.div`
+  display: inline-block;
+  height: auto;
+`;
+
 const BurgerMenuContainer = styled.div`
   & > * {
     color: black !important;
@@ -30,6 +35,8 @@ const BurgerMenuContainer = styled.div`
     font-weight: bold;
     float: left;
     display: inline;
+    top: 50%;
+    vertical-align: baseline;
   }
 
   .hamburger-ikon,
@@ -93,13 +100,15 @@ const BurgerMenu = () => {
         ref={buttonRef}
         onClick={() => setOpen(!open)}
       >
-        <span className="menu-text">Meny</span>
-        <span>
-          <Hamburger className={!open ? "hamburger-ikon" : "closed-burger"} />
-        </span>
-        <span>
-          <Close className={open ? "close-ikon" : "closed-burger"} />
-        </span>
+        <TextContainer>
+          <span className="menu-text">Meny</span>
+          <span>
+            <Hamburger className={!open ? "hamburger-ikon" : "closed-burger"} />
+          </span>
+          <span>
+            <Close className={open ? "close-ikon" : "closed-burger"} />
+          </span>
+        </TextContainer>
       </Button>
 
       <PopoverCustomized

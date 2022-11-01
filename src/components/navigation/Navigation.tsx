@@ -3,8 +3,9 @@ import { NavigationContainer, LinkSpacer } from "../Styles";
 import { useContext } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import styled from "styled-components";
 import { BodyShort } from "@navikt/ds-react";
+import { UserStateContext } from "../UserStatusContext";
+import { UserData } from "../../types/userData";
 
 import {
   RouterArbeidsgiver,
@@ -17,22 +18,33 @@ import {
 export const Navigation = () => {
   const router = useRouter();
 
-  //const user = useContext<UserData>(UserStateContext)
+  const user = useContext<UserData>(UserStateContext);
 
   return (
     <NavigationContainer>
       <ul role="tablist">
-        {/*{user.navIdent &&
-                        <li role="tab" onClick={() => router.push(RouterInternt.PATH)}>
-                            <Link href={RouterInternt.PATH}>
-                                <a>
-                                    <LenkeSpacer className={`${(router.asPath === RouterInternt.PATH) ? "active" : "inactive"}`}>
-                                        <BodyShort size="small" className={`${router.pathname === "/Internt" ? "active" : ""}`}>{RouterInternt.NAME}</BodyShort>
-                                    </LenkeSpacer>
-                                </a>
-                            </Link>
-                        </li>
-                    }*/}
+        {user.navIdent && (
+          <li role="tab" onClick={() => router.push(RouterInternt.PATH)}>
+            <Link href={RouterInternt.PATH}>
+              <a>
+                <LinkSpacer
+                  className={`${
+                    router.asPath === RouterInternt.PATH ? "active" : "inactive"
+                  }`}
+                >
+                  <BodyShort
+                    size="small"
+                    className={`${
+                      router.pathname === RouterInternt.PATH ? "active" : ""
+                    }`}
+                  >
+                    {RouterInternt.NAME}
+                  </BodyShort>
+                </LinkSpacer>
+              </a>
+            </Link>
+          </li>
+        )}
         <li role="tab" onClick={() => router.push(RouterPrivatperson.PATH)}>
           <Link href={RouterPrivatperson.PATH}>
             <a>
@@ -46,7 +58,7 @@ export const Navigation = () => {
                 <BodyShort
                   size="small"
                   className={`${
-                    router.pathname === "/Privatperson" ? "active" : ""
+                    router.pathname === RouterPrivatperson.PATH ? "active" : ""
                   }`}
                 >
                   {RouterPrivatperson.NAME}
@@ -69,7 +81,7 @@ export const Navigation = () => {
                 <BodyShort
                   size="small"
                   className={`${
-                    router.pathname === "/Arbeidsgiver" ? "active" : ""
+                    router.pathname === RouterArbeidsgiver.PATH ? "active" : ""
                   }`}
                 >
                   {RouterArbeidsgiver.NAME}
@@ -95,7 +107,7 @@ export const Navigation = () => {
                 <BodyShort
                   size="small"
                   className={`${
-                    router.pathname === "/Samarbeidspartner" ? "active" : ""
+                    router.pathname === RouterSamarbeidspartner.PATH ? "active" : ""
                   }`}
                 >
                   {RouterSamarbeidspartner.NAME}
@@ -115,7 +127,7 @@ export const Navigation = () => {
               >
                 <BodyShort
                   size="small"
-                  className={`${router.pathname === "/vaktor" ? "active" : ""}`}
+                  className={`${router.pathname === RouterVaktor.PATH ? "active" : ""}`}
                 >
                   {RouterVaktor.NAME}
                 </BodyShort>
