@@ -13,6 +13,11 @@ import {
   RouterPrivatperson,
   RouterSamarbeidspartner,
   RouterVaktor,
+  RouterArbeidsgiverShort,
+  RouterInterntShort,
+  RouterPrivatpersonShort,
+  RouterSamarbeidspartnerShort,
+  RouterVaktorShort,
 } from "../../types/routes";
 
 export const Navigation = (props: { userID: string; }) => {
@@ -29,13 +34,13 @@ export const Navigation = (props: { userID: string; }) => {
               <a>
                 <LinkSpacer
                   className={`${
-                    router.asPath === RouterInternt.PATH ? "active" : "inactive"
+                    router.asPath === RouterInterntShort.PATH ? "active" : "inactive"
                   }`}
                 >
                   <BodyShort
                     size="small"
                     className={`${
-                      router.pathname === RouterInternt.PATH ? "active" : ""
+                      router.pathname === RouterInterntShort.PATH ? "active" : ""
                     }`}
                   >
                     {RouterInternt.NAME}
@@ -50,7 +55,7 @@ export const Navigation = (props: { userID: string; }) => {
             <a>
               <LinkSpacer
                 className={`${
-                  router.asPath === RouterPrivatperson.PATH
+                  router.asPath === RouterPrivatpersonShort.PATH
                     ? "active"
                     : "inactive"
                 }`}
@@ -58,7 +63,7 @@ export const Navigation = (props: { userID: string; }) => {
                 <BodyShort
                   size="small"
                   className={`${
-                    router.pathname === RouterPrivatperson.PATH ? "active" : ""
+                    router.pathname === RouterPrivatpersonShort.PATH ? "active" : ""
                   }`}
                 >
                   {RouterPrivatperson.NAME}
@@ -73,7 +78,7 @@ export const Navigation = (props: { userID: string; }) => {
             <a>
               <LinkSpacer
                 className={`${
-                  router.asPath === RouterArbeidsgiver.PATH
+                  router.asPath === RouterArbeidsgiverShort.PATH
                     ? "active"
                     : "inactive"
                 }`}
@@ -81,7 +86,7 @@ export const Navigation = (props: { userID: string; }) => {
                 <BodyShort
                   size="small"
                   className={`${
-                    router.pathname === RouterArbeidsgiver.PATH ? "active" : ""
+                    router.pathname === RouterArbeidsgiverShort.PATH ? "active" : ""
                   }`}
                 >
                   {RouterArbeidsgiver.NAME}
@@ -99,7 +104,7 @@ export const Navigation = (props: { userID: string; }) => {
             <a>
               <LinkSpacer
                 className={`${
-                  router.asPath === RouterSamarbeidspartner.PATH
+                  router.asPath === RouterSamarbeidspartnerShort.PATH
                     ? "active"
                     : "inactive"
                 }`}
@@ -107,7 +112,7 @@ export const Navigation = (props: { userID: string; }) => {
                 <BodyShort
                   size="small"
                   className={`${
-                    router.pathname === RouterSamarbeidspartner.PATH ? "active" : ""
+                    router.pathname === RouterSamarbeidspartnerShort.PATH ? "active" : ""
                   }`}
                 >
                   {RouterSamarbeidspartner.NAME}
@@ -122,12 +127,12 @@ export const Navigation = (props: { userID: string; }) => {
             <a>
               <LinkSpacer
                 className={`${
-                  router.asPath === RouterVaktor.PATH ? "active" : "inactive"
+                  router.asPath === RouterVaktorShort.PATH ? "active" : "inactive"
                 }`}
               >
                 <BodyShort
                   size="small"
-                  className={`${router.pathname === RouterVaktor.PATH ? "active" : ""}`}
+                  className={`${router.pathname === RouterVaktorShort.PATH ? "active" : ""}`}
                 >
                   {RouterVaktor.NAME}
                 </BodyShort>

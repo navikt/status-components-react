@@ -34,6 +34,34 @@ export enum RouterInternt {
 }
 // ---
 
+export enum RouterVaktorShort {
+  NAME = "Vaktor",
+  PATH = "/vaktor",
+}
+//---
+
+// Default dashboards
+export enum RouterPrivatpersonShort  {
+  NAME = "Privatperson",
+  PATH = "/Dashboard/Privatperson",
+}
+
+export enum RouterArbeidsgiverShort  {
+  NAME = "Arbeidsgiver",
+  PATH = "/Dashboard/Arbeidsgiver",
+}
+
+export enum RouterSamarbeidspartnerShort  {
+  NAME = "Samarbeidspartner",
+  PATH = "/Dashboard/Samarbeidspartner",
+}
+
+export enum RouterInterntShort  {
+  NAME = "Internt",
+  PATH = "/Dashboard/Internt",
+}
+// ---
+
 // Admin
 export enum RouterAdmin {
   NAME = "Admin",
