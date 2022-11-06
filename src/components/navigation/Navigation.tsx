@@ -20,7 +20,7 @@ import {
   RouterVaktorShort,
 } from "../../types/routes";
 
-export const Navigation = (props: { userID: string;}) => {
+export const Navigation = (props: { userID: string }) => {
   const router = useRouter();
 
   const user = useContext<UserData>(UserStateContext);
@@ -29,52 +29,31 @@ export const Navigation = (props: { userID: string;}) => {
     <NavigationContainer>
       <ul role="tablist">
         {props.userID && (
-          <li role="tab" onClick={() => router.push(RouterInternt.PATH)}>
+          <li role="tab" onClick={(e) => router.push(RouterInternt.PATH)}>
             <Link href={RouterInternt.PATH}>
               <a>
-                <LinkSpacer
-                  className="inactive"
-                >
-                  <BodyShort
-                    size="small"
-                    
-                  >
-                    {RouterInternt.NAME}
-                  </BodyShort>
+                <LinkSpacer className="inactive">
+                  <BodyShort size="small">{RouterInternt.NAME}</BodyShort>
                 </LinkSpacer>
               </a>
             </Link>
           </li>
         )}
-        <li role="tab" onClick={() => router.push(RouterPrivatperson.PATH)}>
+        <li role="tab" onClick={(e) => router.push(RouterPrivatperson.PATH)}>
           <Link href={RouterPrivatperson.PATH}>
             <a>
-              <LinkSpacer
-                className="inactive"
-              >
-                <BodyShort
-                  size="small"
-                  
-                >
-                  {RouterPrivatperson.NAME}
-                </BodyShort>
+              <LinkSpacer className="inactive">
+                <BodyShort size="small">{RouterPrivatperson.NAME}</BodyShort>
               </LinkSpacer>
             </a>
           </Link>
         </li>
 
-        <li role="tab" onClick={() => router.push(RouterArbeidsgiver.PATH)}>
+        <li role="tab" onClick={(e) => router.push(RouterArbeidsgiver.PATH)}>
           <Link href={RouterArbeidsgiver.PATH}>
             <a>
-              <LinkSpacer
-               className="inactive"
-              >
-                <BodyShort
-                  size="small"
-                  
-                >
-                  {RouterArbeidsgiver.NAME}
-                </BodyShort>
+              <LinkSpacer className="inactive">
+                <BodyShort size="small">{RouterArbeidsgiver.NAME}</BodyShort>
               </LinkSpacer>
             </a>
           </Link>
@@ -82,17 +61,12 @@ export const Navigation = (props: { userID: string;}) => {
 
         <li
           role="tab"
-          onClick={() => router.push(RouterSamarbeidspartner.PATH)}
+          onClick={(e) => router.push(RouterSamarbeidspartner.PATH)}
         >
           <Link href={RouterSamarbeidspartner.PATH}>
             <a>
-              <LinkSpacer
-              className="inactive"
-              >
-                <BodyShort
-                  size="small"
-                  
-                >
+              <LinkSpacer className="inactive">
+                <BodyShort size="small">
                   {RouterSamarbeidspartner.NAME}
                 </BodyShort>
               </LinkSpacer>
@@ -100,16 +74,11 @@ export const Navigation = (props: { userID: string;}) => {
           </Link>
         </li>
 
-        <li role="tab" onClick={() => router.push(RouterVaktor.PATH)}>
+        <li role="tab" onClick={(e) => router.push(RouterVaktor.PATH)}>
           <Link href={RouterVaktor.PATH}>
             <a>
-              <LinkSpacer
-                className="active"
-              >
-                <BodyShort
-                  size="small"
-                  className="active"
-                >
+              <LinkSpacer className="active">
+                <BodyShort size="small" className="active">
                   {RouterVaktor.NAME}
                 </BodyShort>
               </LinkSpacer>
