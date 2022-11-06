@@ -9,6 +9,7 @@ export const FooterContainer = styled.footer`
   width: 100%;
   margin-top: auto; /*Footer always at bottom (if min.height of container is 100vh)*/
   padding: 0 1.5rem;
+  bottom: 0px;
   font-family: "Source Sans Pro", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
   background-color: white;
@@ -249,6 +250,7 @@ export const BurgerMenuContainer = styled.div`
 
 export const PopoverCustomized = styled(Popover)`
   width: max-content;
+  z-index: 1000;
 
   div {
     display: flex;
@@ -280,6 +282,7 @@ export const PopoverCustomized = styled(Popover)`
 export const NavigationContainer = styled.nav`
   top: 0px;
   margin-top: 0px;
+  margin-bottom: 0px;
   height: 2.75rem;
   border-bottom: #c6c2bf 1px solid;
 
