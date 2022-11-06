@@ -20,7 +20,7 @@ import {
   RouterVaktorShort,
 } from "../../types/routes";
 
-export const Navigation = (props: { userID: string; }) => {
+export const Navigation = (props: { userID: string;}) => {
   const router = useRouter();
 
   const user = useContext<UserData>(UserStateContext);
@@ -33,15 +33,11 @@ export const Navigation = (props: { userID: string; }) => {
             <Link href={RouterInternt.PATH}>
               <a>
                 <LinkSpacer
-                  className={`${
-                    router.asPath === RouterInterntShort.PATH ? "active" : "inactive"
-                  }`}
+                  className="inactive"
                 >
                   <BodyShort
                     size="small"
-                    className={`${
-                      router.pathname === RouterInterntShort.PATH ? "active" : ""
-                    }`}
+                    
                   >
                     {RouterInternt.NAME}
                   </BodyShort>
@@ -54,17 +50,11 @@ export const Navigation = (props: { userID: string; }) => {
           <Link href={RouterPrivatperson.PATH}>
             <a>
               <LinkSpacer
-                className={`${
-                  router.asPath === RouterPrivatpersonShort.PATH
-                    ? "active"
-                    : "inactive"
-                }`}
+                className="inactive"
               >
                 <BodyShort
                   size="small"
-                  className={`${
-                    router.pathname === RouterPrivatpersonShort.PATH ? "active" : ""
-                  }`}
+                  
                 >
                   {RouterPrivatperson.NAME}
                 </BodyShort>
@@ -77,17 +67,11 @@ export const Navigation = (props: { userID: string; }) => {
           <Link href={RouterArbeidsgiver.PATH}>
             <a>
               <LinkSpacer
-                className={`${
-                  router.asPath === RouterArbeidsgiverShort.PATH
-                    ? "active"
-                    : "inactive"
-                }`}
+               className="inactive"
               >
                 <BodyShort
                   size="small"
-                  className={`${
-                    router.pathname === RouterArbeidsgiverShort.PATH ? "active" : ""
-                  }`}
+                  
                 >
                   {RouterArbeidsgiver.NAME}
                 </BodyShort>
@@ -103,17 +87,11 @@ export const Navigation = (props: { userID: string; }) => {
           <Link href={RouterSamarbeidspartner.PATH}>
             <a>
               <LinkSpacer
-                className={`${
-                  router.asPath === RouterSamarbeidspartnerShort.PATH
-                    ? "active"
-                    : "inactive"
-                }`}
+              className="inactive"
               >
                 <BodyShort
                   size="small"
-                  className={`${
-                    router.pathname === RouterSamarbeidspartnerShort.PATH ? "active" : ""
-                  }`}
+                  
                 >
                   {RouterSamarbeidspartner.NAME}
                 </BodyShort>
@@ -126,13 +104,11 @@ export const Navigation = (props: { userID: string; }) => {
           <Link href={RouterVaktor.PATH}>
             <a>
               <LinkSpacer
-                className={`${
-                  router.asPath === RouterVaktorShort.PATH ? "active" : "inactive"
-                }`}
+                className="active"
               >
                 <BodyShort
                   size="small"
-                  className={`${router.pathname === RouterVaktorShort.PATH ? "active" : ""}`}
+                  className="active"
                 >
                   {RouterVaktor.NAME}
                 </BodyShort>

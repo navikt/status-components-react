@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 
 import { Close, Employer, Hamburger } from "@navikt/ds-icons";
 import { Button, Popover } from "@navikt/ds-react";
-
-import { UserStateContext } from "../UserStatusContext";
-import { UserData } from "../../types/userData";
+import {
+  TextWrapper,
+  IconWrapper,
+  BurgerMenuContainer,
+  PopoverCustomized,
+} from "../Styles";
 import {
   RouterAdmin,
   RouterArbeidsgiver,
@@ -16,100 +19,27 @@ import {
   RouterPrivatperson,
   RouterSamarbeidspartner,
 } from "../../types/routes";
-import { useRevalidator } from "react-router-dom";
 
-const TextContainer = styled.div`
-  display: inline-block;
-  height: auto;
-`;
-
-const BurgerMenuContainer = styled.div`
-  & > * {
-    color: black !important;
-  }
-
-  .navds-button:hover {
-    box-shadow: inset 0 0 0 2px var(--navds-global-color-gray-900);
-  }
-
-  .menu-text {
-    font-weight: bold;
-    float: left;
-    display: inline;
-    top: 50%;
-    vertical-align: baseline;
-  }
-
-  .hamburger-ikon,
-  .close-ikon {
-    width: 28px;
-    height: 24px;
-    float: left;
-    position: relative;
-    display: inline;
-  }
-
-  .closed-burger {
-    display: none;
-  }
-
-  @media (min-width: 450px) {
-    button {
-      margin-right: 1rem;
-    }
-  }
-`;
-
-const PopoverCustomized = styled(Popover)`
-  width: max-content;
-
-  div {
-    display: flex;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem;
-
-    li {
-      padding: 1rem 0;
-    }
-
-    .popover-link-ikon {
-      margin-right: 0.5rem;
-    }
-
-    a {
-      color: black;
-    }
-  }
-`;
-
-const BurgerMenu = (props: { userID: string; }) => {
+const BurgerMenu = (props: { userID: string }) => {
   const buttonRef = useRef(null);
   const [open, setOpen] = useState(false);
-  
+
   useRouter();
 
   return (
     <BurgerMenuContainer>
       <Button
+        icon={!open ? <Hamburger /> : <Close />}
+        iconPosition="right"
         variant="tertiary"
-        id="menu-container"
+        className="menu-container"
         aria-expanded={open}
         ref={buttonRef}
         onClick={() => setOpen(!open)}
       >
-        <TextContainer>
-          <span className="menu-text">Meny</span>
-          <span>
-            <Hamburger className={!open ? "hamburger-ikon" : "closed-burger"} />
-          </span>
-          <span>
-            <Close className={open ? "close-ikon" : "closed-burger"} />
-          </span>
-        </TextContainer>
+        <TextWrapper>
+          <span>Meny</span>
+        </TextWrapper>
       </Button>
 
       <PopoverCustomized
@@ -119,7 +49,7 @@ const BurgerMenu = (props: { userID: string; }) => {
         placement="bottom"
       >
         <Popover.Content>
-          <PopoverContent userID = {props.userID} />
+          <PopoverContent userID={props.userID} />
         </Popover.Content>
       </PopoverCustomized>
     </BurgerMenuContainer>
@@ -128,9 +58,8 @@ const BurgerMenu = (props: { userID: string; }) => {
 
 /*------------ Helpers below ------------*/
 
-const PopoverContent = (props: { userID: string; }) => {
+const PopoverContent = (props: { userID: string }) => {
   //const user = useContext<UserData>(UserStateContext);
-
 
   return (
     <div>

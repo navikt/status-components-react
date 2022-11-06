@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Heading } from "@navikt/ds-react";
+
+import { Heading, Popover } from "@navikt/ds-react";
 /*
 ---- FOOTER ----
 */
@@ -89,6 +90,7 @@ export const CustomHeader = styled.header`
   border-bottom: 1px solid #c6c2bf;
   font-family: "Source Sans Pro", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
+
   position: relative;
   display: flex;
   flex-flow: row wrap;
@@ -168,7 +170,6 @@ export const HeaderContent = styled.span`
     margin-right: 150px;
   }
 `;
-
 export const DetailText = styled(Heading)`
   font-size: 14px;
   font-weight: 100;
@@ -189,6 +190,86 @@ export const HeadingCustomized = styled(Heading)`
   }
   @media (min-width: 650px) {
     white-space: normal;
+  }
+`;
+
+/*
+---- BURGERMENU ----
+*/
+
+export const TextWrapper = styled.div`
+  display: inline-block;
+
+  font-weight: bold;
+`;
+export const IconWrapper = styled.div`
+  display: inline-block;
+  padding: -2px;
+`;
+
+export const BurgerMenuContainer = styled.div`
+  display: flex;
+  align-items: center;
+  & > * {
+    color: black !important;
+  }
+
+  .navds-button:hover {
+    box-shadow: inset 0 0 0 2px var(--navds-global-color-gray-900);
+  }
+
+  .menu-container {
+    width: 120px;
+  }
+
+  .menu-text {
+    margin-bottom: 3px;
+    align-items: center;
+  }
+
+  .hamburger-ikon,
+  .close-ikon {
+    width: 28px;
+    height: 24px;
+
+    position: relative;
+    display: block;
+  }
+
+  .closed-burger {
+    display: none;
+  }
+
+  @media (min-width: 450px) {
+    button {
+      margin-right: 1rem;
+    }
+  }
+`;
+
+export const PopoverCustomized = styled(Popover)`
+  width: max-content;
+
+  div {
+    display: flex;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem;
+
+    li {
+      padding: 1rem 0;
+    }
+
+    .popover-link-ikon {
+      margin-right: 0.5rem;
+    }
+
+    a {
+      color: black;
+    }
   }
 `;
 
