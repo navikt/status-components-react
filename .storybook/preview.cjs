@@ -1,12 +1,12 @@
 import { RouterContext } from "next/dist/shared/lib/router-context";
-import "@navikt/ds-css"
+import "@navikt/ds-css";
 export const parameters = {
   nextRouter: {
     Provider: RouterContext.Provider,
-    path: '/', // defaults to `/`
-        asPath: '/', // defaults to `/`
-        query: {}, // defaults to `{}`
-        push() {}
+    path: "/", // defaults to `/`
+    asPath: "/", // defaults to `/`
+    query: {}, // defaults to `{}`
+    push() {},
   },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -15,4 +15,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};

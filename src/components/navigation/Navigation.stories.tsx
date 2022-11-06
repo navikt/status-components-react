@@ -17,14 +17,16 @@ export default {
 } as ComponentMeta<typeof Navigation>;
 
 //👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Navigation> = (args) => <Navigation {...args} />;
+const Template: ComponentStory<typeof Navigation> = (args) => (
+  <Navigation {...args} />
+);
 
 export const Primary = Template.bind({});
 
 Primary.args = {
   userID: "",
 };
-
+/*
 export const internPath = {
   parameters: { 
     nextRouter: {
@@ -68,4 +70,4 @@ export const  vaktorPath = {
       asPath: RouterVaktor.PATH
     }
   }
-}
+}*/
