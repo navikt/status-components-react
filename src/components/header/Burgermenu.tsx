@@ -16,6 +16,7 @@ import {
   RouterPrivatperson,
   RouterSamarbeidspartner,
 } from "../../types/routes";
+import { useRevalidator } from "react-router-dom";
 
 const TextContainer = styled.div`
   display: inline-block;
@@ -85,10 +86,10 @@ const PopoverCustomized = styled(Popover)`
   }
 `;
 
-const BurgerMenu = () => {
+const BurgerMenu = (props: { userID: string; }) => {
   const buttonRef = useRef(null);
   const [open, setOpen] = useState(false);
-
+  
   useRouter();
 
   return (
@@ -118,7 +119,7 @@ const BurgerMenu = () => {
         placement="bottom"
       >
         <Popover.Content>
-          <PopoverContent />
+          <PopoverContent userID = {props.userID} />
         </Popover.Content>
       </PopoverCustomized>
     </BurgerMenuContainer>
@@ -127,17 +128,18 @@ const BurgerMenu = () => {
 
 /*------------ Helpers below ------------*/
 
-const PopoverContent = () => {
-  const user = useContext<UserData>(UserStateContext);
+const PopoverContent = (props: { userID: string; }) => {
+  //const user = useContext<UserData>(UserStateContext);
+
 
   return (
     <div>
       <ul>
-        {user.navIdent && (
+        {props.userID && (
           <>
             <li>
               <Link href={RouterInternt.PATH}>
-                {RouterInternt.NAME + " (Kun for innloggede nav brukere)"}
+                {RouterInternt.NAME + " (Kun for innloggede NAV-brukere)"}
               </Link>
             </li>
             <li>
@@ -162,7 +164,7 @@ const PopoverContent = () => {
       </ul>
 
       <ul>
-        {user.navIdent && (
+        {props.userID && (
           <>
             <li>
               <Link href={RouterAdmin.PATH}>

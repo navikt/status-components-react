@@ -123,7 +123,7 @@ export const HeadingCustomized = styled(Heading)`
   }
 `;
 
-export const Header = (props: { imageURL: any }) => {
+export const Header = (props: { imageURL: any, userID:string, userName:string }) => {
   const router = useRouter();
   const [subscribeModalHidden, setSubscribeModalBoolean] = useState(false);
   const [showFilters, toggleFilters] = useState(false);
@@ -179,8 +179,8 @@ export const Header = (props: { imageURL: any }) => {
         </HeadingCustomized>
       </HeaderContent>
       <div className="header-menues last">
-        <BurgerMenu />
-       {/*<ProfileOrLogin name={name} navIdent={navIdent} />*/ } 
+        <BurgerMenu userID  = {props.userID}/>
+       <ProfileOrLogin name={props.userName} navIdent={props.userID} />
       </div>
     </CustomHeader>
   );
@@ -321,19 +321,19 @@ const PopoverCustomized = styled(Popover)`
     }
 `
 
-/*const ProfileOrLogin: React.FC<{ name: string; navIdent: string }> = ({
+const ProfileOrLogin: React.FC<{ name: string; navIdent: string }> = ({
   name,
   navIdent,
 }) => {
   const router = useRouter()
 
   const [open, setOpen] = useState(false)
-  const [anchorEl, setAnchorEl] = useState(undefined)
+  const [anchorEl, setAnchorEl] = useState<Element|null>(null)
 
   const handleSetOpen = (event: any) => {
       setOpen(!open)
       if (anchorEl) {
-          setAnchorEl(undefined)
+          setAnchorEl(null)
           return
       }
       setAnchorEl(event)
@@ -342,7 +342,7 @@ const PopoverCustomized = styled(Popover)`
   const closePopover = () => {
       setOpen(!open)
       if (anchorEl) {
-          setAnchorEl(undefined)
+          setAnchorEl(null)
       }
   }
 
@@ -392,6 +392,6 @@ const PopoverCustomized = styled(Popover)`
           )}
       </>
   )
-}*/
+}
 
 

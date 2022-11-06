@@ -16,4 +16,6 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   imageURL: "src/assets/navblack.png",
+  userID: "",
+  userName:""
 };

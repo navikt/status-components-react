@@ -15,7 +15,7 @@ import {
   RouterVaktor,
 } from "../../types/routes";
 
-export const Navigation = () => {
+export const Navigation = (props: { userID: string; }) => {
   const router = useRouter();
 
   const user = useContext<UserData>(UserStateContext);
@@ -23,7 +23,7 @@ export const Navigation = () => {
   return (
     <NavigationContainer>
       <ul role="tablist">
-        {user.navIdent && (
+        {props.userID && (
           <li role="tab" onClick={() => router.push(RouterInternt.PATH)}>
             <Link href={RouterInternt.PATH}>
               <a>

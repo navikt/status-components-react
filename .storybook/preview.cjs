@@ -1,4 +1,5 @@
 import { RouterContext } from "next/dist/shared/lib/router-context";
+import "@navikt/ds-css"
 export const parameters = {
   nextRouter: {
     Provider: RouterContext.Provider,
