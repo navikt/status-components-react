@@ -37,9 +37,7 @@ const BurgerMenu = (props: { userID: string }) => {
         ref={buttonRef}
         onClick={() => setOpen(!open)}
       >
-        <TextWrapper>
-          <span>Meny</span>
-        </TextWrapper>
+        <TextWrapper>Meny</TextWrapper>
       </Button>
 
       <PopoverCustomized

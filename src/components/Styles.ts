@@ -90,8 +90,8 @@ export const CustomHeader = styled.header`
   border-bottom: 1px solid #c6c2bf;
   font-family: "Source Sans Pro", "Trebuchet MS", "Lucida Sans Unicode",
     "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
-
-  position: relative;
+  top: 0px;
+  margin-top: 0px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -278,6 +278,8 @@ export const PopoverCustomized = styled(Popover)`
  */
 
 export const NavigationContainer = styled.nav`
+  top: 0px;
+  margin-top: 0px;
   height: 2.75rem;
   border-bottom: #c6c2bf 1px solid;
 

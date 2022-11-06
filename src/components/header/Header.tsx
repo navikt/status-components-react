@@ -11,12 +11,19 @@ import BurgerMenu from "./Burgermenu";
 import { useRouter } from "next/router";
 import { createRef, SetStateAction, useContext, useState } from "react";
 import { UserStateContext } from "../UserStatusContext";
-import { CustomHeader, HeaderContent, DetailText, HeadingCustomized } from "../Styles";
+import {
+  CustomHeader,
+  HeaderContent,
+  DetailText,
+  HeadingCustomized,
+} from "../Styles";
 
-
-
-export const Header = (props: { imageURL: any, userID:string, userName:string }) => {
- const router = useRouter();
+export const Header = (props: {
+  imageURL: any;
+  userID: string;
+  userName: string;
+}) => {
+  const router = useRouter();
   const [subscribeModalHidden, setSubscribeModalBoolean] = useState(false);
   const [showFilters, toggleFilters] = useState(false);
 
@@ -67,12 +74,12 @@ export const Header = (props: { imageURL: any, userID:string, userName:string })
       <HeaderContent>
         <HeadingCustomized size="2xlarge" level="1">
           <b>Status</b> digitale tjenester{" "}
-          <DetailText>Under oppbygging</DetailText>
         </HeadingCustomized>
+        <DetailText>Under oppbygging</DetailText>
       </HeaderContent>
       <div className="header-menues last">
-        <BurgerMenu userID  = {props.userID}/>
-       <ProfileOrLogin name={props.userName} navIdent={props.userID} />
+        <BurgerMenu userID={props.userID} />
+        <ProfileOrLogin name={props.userName} navIdent={props.userID} />
       </div>
     </CustomHeader>
   );
@@ -167,124 +174,116 @@ const Filters = () => {
 // ---
 
 const ProfileButton = styled(Button)`
-    border-radius: 50px;
-    min-width: 148px;
-    color: black;
-    box-shadow: inset 0 0 0 2px black;
+  border-radius: 50px;
+  min-width: 148px;
+  color: black;
+  box-shadow: inset 0 0 0 2px black;
 
-    :hover {
-        background: black;
-    }
-`
+  :hover {
+    background: black;
+  }
+`;
 
 const LoginButton = styled(Button)`
-    border-radius: 50px;
-    min-width: 148px;
-    color: black;
-    box-shadow: inset 0 0 0 2px black;
+  border-radius: 50px;
+  min-width: 148px;
+  color: black;
+  box-shadow: inset 0 0 0 2px black;
 
-    :hover {
-        background: black;
-    }
-`
+  :hover {
+    background: black;
+  }
+`;
 
 const PopoverCustomized = styled(Popover)`
-    width: max-content;
+  width: max-content;
 
-    ul {
-        padding: 0;
-        margin: 1rem;
-    }
+  ul {
+    padding: 0;
+    margin: 1rem;
+  }
 
-    ul > li {
-        color: black;
-        list-style: none;
-        text-align: left;
-    }
+  ul > li {
+    color: black;
+    list-style: none;
+    text-align: left;
+  }
 
-    li {
-        padding: 1rem 0;
-    }
+  li {
+    padding: 1rem 0;
+  }
 
-    .navds-link,
-    svg {
-        color: black;
-        cursor: pointer;
-    }
-`
+  .navds-link,
+  svg {
+    color: black;
+    cursor: pointer;
+  }
+`;
 
 const ProfileOrLogin: React.FC<{ name: string; navIdent: string }> = ({
   name,
   navIdent,
 }) => {
-  const router = useRouter()
+  const router = useRouter();
 
-  const [open, setOpen] = useState(false)
-  const [anchorEl, setAnchorEl] = useState<Element|null>(null)
+  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 
   const handleSetOpen = (event: any) => {
-      setOpen(!open)
-      if (anchorEl) {
-          setAnchorEl(null)
-          return
-      }
-      setAnchorEl(event)
-  }
+    setOpen(!open);
+    if (anchorEl) {
+      setAnchorEl(null);
+      return;
+    }
+    setAnchorEl(event);
+  };
 
   const closePopover = () => {
-      setOpen(!open)
-      if (anchorEl) {
-          setAnchorEl(null)
-      }
-  }
+    setOpen(!open);
+    if (anchorEl) {
+      setAnchorEl(null);
+    }
+  };
 
   return (
-      <>
-          {name && navIdent ? (
-              <>
-                  <ProfileButton
-                      variant="secondary"
-                      onClick={(event:any) => handleSetOpen(event.currentTarget)}
-                      aria-expanded={!!anchorEl}
-                      icon = {<PeopleFilled />}
-                  >
-                      
-                  </ProfileButton>
-                  <PopoverCustomized
-                      open={open}
-                      onClose={closePopover}
-                      anchorEl={anchorEl}
-                      placement="bottom"
-                  >
-                      <PopoverCustomized.Content>
-                          <strong>{name}</strong>
-                          <ul>
-                            
-                              <li>
-                                  <a
-                                      className="navds-link"
-                                      href={RouterLogout.PATH}
-                                  >
-                                      {" "}
-                                      <Logout /> Logg ut
-                                  </a>
-                              </li>
-                          </ul>
-                      </PopoverCustomized.Content>
-                  </PopoverCustomized>
-              </>
-          ) : (
-              <LoginButton
-                  variant="secondary"
-                  onClick={() => router.push(RouterLogin.PATH)}
-              >
-                  <BodyShort>
-                      <b>Logg inn</b>
-                  </BodyShort>
-              </LoginButton>
-          )}
-      </>
-  )
-}
-
-
+    <>
+      {name && navIdent ? (
+        <>
+          <ProfileButton
+            variant="secondary"
+            onClick={(event: any) => handleSetOpen(event.currentTarget)}
+            aria-expanded={!!anchorEl}
+            icon={<PeopleFilled />}
+          ></ProfileButton>
+          <PopoverCustomized
+            open={open}
+            onClose={closePopover}
+            anchorEl={anchorEl}
+            placement="bottom"
+          >
+            <PopoverCustomized.Content>
+              <strong>{name}</strong>
+              <ul>
+                <li>
+                  <a className="navds-link" href={RouterLogout.PATH}>
+                    {" "}
+                    <Logout /> Logg ut
+                  </a>
+                </li>
+              </ul>
+            </PopoverCustomized.Content>
+          </PopoverCustomized>
+        </>
+      ) : (
+        <LoginButton
+          variant="secondary"
+          onClick={() => router.push(RouterLogin.PATH)}
+        >
+          <BodyShort>
+            <b>Logg inn</b>
+          </BodyShort>
+        </LoginButton>
+      )}
+    </>
+  );
+};
