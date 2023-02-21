@@ -1,67 +1,67 @@
-import styled from "styled-components";
-import { Logout, PeopleFilled } from "@navikt/ds-icons";
-import { BodyShort, Button, Heading, Popover } from "@navikt/ds-react";
+import styled from "styled-components"
+import { Logout, PeopleFilled } from "@navikt/ds-icons"
+import { BodyShort, Button, Heading, Popover } from "@navikt/ds-react"
 import {
   RouterHomePage,
   RouterLogin,
   RouterLogout,
   RouterInternt,
-} from "../../types/routes";
-import BurgerMenu from "./Burgermenu";
-import { useRouter } from "next/router";
-import { createRef, SetStateAction, useContext, useState } from "react";
-import { UserStateContext } from "../UserStatusContext";
+} from "../../types/routes"
+import BurgerMenu from "./Burgermenu"
+import { useRouter } from "next/router"
+import { createRef, SetStateAction, useContext, useState } from "react"
+import { UserStateContext } from "../UserStatusContext"
 import {
   CustomHeader,
   HeaderContent,
   DetailText,
   HeadingCustomized,
-} from "../Styles";
+} from "../Styles"
 
 export const Header = (props: {
-  imageURL: any;
-  userID: string;
-  userName: string;
+  imageURL: any
+  userID: string
+  userName: string
 }) => {
-  const router = useRouter();
-  const [subscribeModalHidden, setSubscribeModalBoolean] = useState(false);
-  const [showFilters, toggleFilters] = useState(false);
+  const router = useRouter()
+  const [subscribeModalHidden, setSubscribeModalBoolean] = useState(false)
+  const [showFilters, toggleFilters] = useState(false)
 
-  const [anchor, setAnchor] = useState(undefined);
+  const [anchor, setAnchor] = useState(undefined)
 
-  const { name, navIdent } = useContext(UserStateContext);
+  const { name, navIdent } = useContext(UserStateContext)
 
-  const filterRef = createRef();
+  const filterRef = createRef()
 
   const toggleSubscribeModal = () => {
-    setSubscribeModalBoolean(!subscribeModalHidden);
-  };
+    setSubscribeModalBoolean(!subscribeModalHidden)
+  }
 
   const handleToggleFilters = () => {
-    toggleFilters(!showFilters);
-  };
+    toggleFilters(!showFilters)
+  }
 
   const openPopover = (event: any) => {
     if (anchor) {
-      setAnchor(undefined);
-      return;
+      setAnchor(undefined)
+      return
     }
-    setAnchor(event);
-  };
+    setAnchor(event)
+  }
 
   const closePopover = () => {
     if (anchor) {
-      setAnchor(undefined);
+      setAnchor(undefined)
     }
-  };
+  }
 
   const conditionalReroute = () => {
     if (!navIdent) {
-      router.push(RouterInternt.PATH);
+      router.push(RouterInternt.PATH)
     } else {
-      router.push(RouterHomePage.PATH);
+      router.push(RouterHomePage.PATH)
     }
-  };
+  }
 
   return (
     <CustomHeader>
@@ -75,15 +75,14 @@ export const Header = (props: {
         <HeadingCustomized size="2xlarge" level="1">
           <b>Status</b> digitale tjenester{" "}
         </HeadingCustomized>
-        <DetailText>Under oppbygging</DetailText>
       </HeaderContent>
       <div className="header-menues last">
         <BurgerMenu userID={props.userID} />
         <ProfileOrLogin name={props.userName} navIdent={props.userID} />
       </div>
     </CustomHeader>
-  );
-};
+  )
+}
 
 /* ---------------------------------------- Helpers below ---------------------------------------- */
 
@@ -182,7 +181,7 @@ const ProfileButton = styled(Button)`
   :hover {
     background: black;
   }
-`;
+`
 
 const LoginButton = styled(Button)`
   border-radius: 50px;
@@ -193,7 +192,7 @@ const LoginButton = styled(Button)`
   :hover {
     background: black;
   }
-`;
+`
 
 const PopoverCustomized = styled(Popover)`
   width: max-content;
@@ -218,32 +217,32 @@ const PopoverCustomized = styled(Popover)`
     color: black;
     cursor: pointer;
   }
-`;
+`
 
 const ProfileOrLogin: React.FC<{ name: string; navIdent: string }> = ({
   name,
   navIdent,
 }) => {
-  const router = useRouter();
+  const router = useRouter()
 
-  const [open, setOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState<Element | null>(null);
+  const [open, setOpen] = useState(false)
+  const [anchorEl, setAnchorEl] = useState<Element | null>(null)
 
   const handleSetOpen = (event: any) => {
-    setOpen(!open);
+    setOpen(!open)
     if (anchorEl) {
-      setAnchorEl(null);
-      return;
+      setAnchorEl(null)
+      return
     }
-    setAnchorEl(event);
-  };
+    setAnchorEl(event)
+  }
 
   const closePopover = () => {
-    setOpen(!open);
+    setOpen(!open)
     if (anchorEl) {
-      setAnchorEl(null);
+      setAnchorEl(null)
     }
-  };
+  }
 
   return (
     <>
@@ -285,5 +284,5 @@ const ProfileOrLogin: React.FC<{ name: string; navIdent: string }> = ({
         </LoginButton>
       )}
     </>
-  );
-};
+  )
+}
