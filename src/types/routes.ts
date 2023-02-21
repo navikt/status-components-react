@@ -41,22 +41,22 @@ export enum RouterVaktorShort {
 //---
 
 // Default dashboards
-export enum RouterPrivatpersonShort  {
+export enum RouterPrivatpersonShort {
   NAME = "Privatperson",
   PATH = "/Dashboard/Privatperson",
 }
 
-export enum RouterArbeidsgiverShort  {
+export enum RouterArbeidsgiverShort {
   NAME = "Arbeidsgiver",
   PATH = "/Dashboard/Arbeidsgiver",
 }
 
-export enum RouterSamarbeidspartnerShort  {
+export enum RouterSamarbeidspartnerShort {
   NAME = "Samarbeidspartner",
   PATH = "/Dashboard/Samarbeidspartner",
 }
 
-export enum RouterInterntShort  {
+export enum RouterInterntShort {
   NAME = "Internt",
   PATH = "/Dashboard/Internt",
 }
@@ -122,6 +122,11 @@ export enum RouterAvvikshistorikk {
   PATH = "/Avvikshistorikk",
 }
 // ---
+
+export enum RouterUUStatus {
+  NAME = "Status - Universell Utforming",
+  PATH = "/UUStatus",
+}
 
 // OPSMeldinger
 export enum RouterOpsMeldinger {

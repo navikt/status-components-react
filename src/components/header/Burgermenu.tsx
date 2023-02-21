@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useRef, useState } from "react";
-import styled from "styled-components";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { useRef, useState } from "react"
+import styled from "styled-components"
 
-import { Close, Employer, Hamburger } from "@navikt/ds-icons";
-import { Button, Popover } from "@navikt/ds-react";
+import { Close, Employer, Hamburger } from "@navikt/ds-icons"
+import { Button, Popover } from "@navikt/ds-react"
 import {
   TextWrapper,
   IconWrapper,
   BurgerMenuContainer,
   PopoverCustomized,
-} from "../Styles";
+} from "../Styles"
 import {
   RouterAdmin,
   RouterArbeidsgiver,
@@ -18,13 +18,13 @@ import {
   RouterOpsMeldinger,
   RouterPrivatperson,
   RouterSamarbeidspartner,
-} from "../../types/routes";
+} from "../../types/routes"
 
 const BurgerMenu = (props: { userID: string }) => {
-  const buttonRef = useRef(null);
-  const [open, setOpen] = useState(false);
+  const buttonRef = useRef(null)
+  const [open, setOpen] = useState(false)
 
-  useRouter();
+  useRouter()
 
   return (
     <BurgerMenuContainer>
@@ -37,7 +37,7 @@ const BurgerMenu = (props: { userID: string }) => {
         ref={buttonRef}
         onClick={() => setOpen(!open)}
       >
-        <TextWrapper>Meny</TextWrapper>
+        Meny
       </Button>
 
       <PopoverCustomized
@@ -51,8 +51,8 @@ const BurgerMenu = (props: { userID: string }) => {
         </Popover.Content>
       </PopoverCustomized>
     </BurgerMenuContainer>
-  );
-};
+  )
+}
 
 /*------------ Helpers below ------------*/
 
@@ -105,7 +105,7 @@ const PopoverContent = (props: { userID: string }) => {
         )}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default BurgerMenu;
+export default BurgerMenu
