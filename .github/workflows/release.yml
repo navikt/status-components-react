@@ -1,38 +1,24 @@
 # .github/workflows/release.yml:
-name: Release
+name: npm publish
 
 on:
-  workflow_dispatch:
-    inputs:
-      bump:
-        description: 'bump type, major or minor or patch or empty string'
-        default: ''
-      dry_run:
-        description: 'dry run, true or false'
-        default: 'false'
-      draft:
-        description: 'draft, true or false'
-        default: 'false'
-      pre_release:
-        description: 'pre release, true or false'
-        default: 'false'
+  push:
+    branches:
+      - main
 
 jobs:
-  release:
+  publish:
+    name: npm publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install
-      - run: npm run build
-      - uses: MeilCli/bump-release-action@v1
-        with:
-          config_path: '.github/bump.yml'
-          bump: ${{ github.event.inputs.bump }}
-          dry_run: ${{ github.event.inputs.dry_run }}
-          draft: ${{ github.event.inputs.draft }}
-          pre_release: ${{ github.event.inputs.pre_release }}
+          registry-url: "https://npm.pkg.github.com"
+      - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
